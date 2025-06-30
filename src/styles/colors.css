@@ -1,0 +1,46 @@
+:root {
+    /* Primary Colors */
+    --color-primary: #2E3C4B;           /* Main - rich dark slate blue */
+    --color-primary-light: #99CCD9;     /* Light - calm, friendly blue */
+    --color-primary-dark: #307689;      /* Dark - deep teal for strong accents */
+    
+    /* Secondary Colors (Using Logo Colors) */
+    --color-secondary: #077B96;         /* Logo teal */
+    --color-secondary-light: #99CCD9;   /* Soft complement to teal */
+    --color-secondary-dark: #2E3C4B;    /* Slightly re-using primary main for depth */
+    
+    /* Text Colors */
+    --color-text-primary: #000000;      /* Standard readable black */
+    --color-text-secondary: #2E3C4B;    /* Heading/dark slate blue for contrast */
+    --color-text-muted: #E0E0E0;
+    --color-text-muted2: #919191;
+    
+    /* Heading Colors */
+    --color-heading-primary: #2E3C4B;   /* Strong branding */
+    --color-heading-secondary: #307689; /* Secondary dark blue for contrast */
+    
+    /* Button Colors */
+    --color-button-primary: #077B96;    /* Logo teal - stands out */
+    --color-button-primary-text: #ffffff;
+    --color-button-secondary: #EA762C;  /* Logo orange - high contrast */
+    --color-button-secondary-text: #ffffff;
+  
+    /* Background Colors */
+    --color-background-primary: #FAFAFA;   /* Clean background */
+    --color-background-secondary: #E0E0E0; /* Slight contrast sections */
+    --color-background-dark: #2E3C4B;      /* Dark theme background */
+    
+    /* Border Colors */
+    --color-border-primary: #E0E0E0;       /* Divider */
+    --color-border-secondary: #919191;     /* Interactive border */
+    
+    /* Overlay Colors */
+    --color-overlay: rgba(46, 60, 75, 0.2);  /* Soft dark overlay */
+    --color-overlay-dark: rgba(46, 60, 75, 0.7); /* Strong overlay */
+    
+    /* Interactive Colors */
+    --color-hover: #307689;               /* Smooth hover */
+    --color-active: #077B96;              /* Active accent teal */
+    --color-focus: #ef9258;               /* High visibility orange focus */
+  }
+  

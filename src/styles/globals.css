@@ -1,0 +1,18 @@
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-button-secondary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-button-secondary-hover, var(--color-button-secondary));
+  opacity: 0.8;
+} 

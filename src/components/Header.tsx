@@ -126,17 +126,27 @@ const Header: React.FC = () => {
                     }}
                   >
                     <img 
-                      src="/assets/conforce.png" 
+                      src="/assets/Conforce-orange.png" 
                       alt="Conforce Logo" 
-                      className="h-2.5 w-auto mr-1.5"
+                      className="h-4 w-auto mr-2"
                     />
                     <span>Conforce</span>
                   </Link>
-                  <div className="block px-4 py-2 text-sm text-gray-400/60 cursor-not-allowed border-t border-white/10 md:border-gray-200">
-                    Transforce
+                  <div className="flex items-center px-4 py-2 text-sm text-gray-400/60 cursor-not-allowed border-t border-white/10 md:border-gray-200">
+                    <img 
+                      src="/assets/Transforce-orange.png" 
+                      alt="Transforce Logo" 
+                      className="h-6 w-auto mr-2"
+                    />
+                    <span>Transforce</span>
                   </div>
-                  <div className="block px-4 py-2 text-sm text-gray-400/60 cursor-not-allowed border-t border-white/10 md:border-gray-200 md:rounded-b-lg">
-                    Wareforce
+                  <div className="flex items-center px-4 py-2 text-sm text-gray-400/60 cursor-not-allowed border-t border-white/10 md:border-gray-200 md:rounded-b-lg">
+                    <img 
+                      src="/assets/Workforce-orange.png" 
+                      alt="Workforce Logo" 
+                      className="h-6 w-auto mr-2"
+                    />
+                    <span>Workforce</span>
                   </div>
                 </div>
               </div>
@@ -201,4 +211,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header; 
+export default Header;

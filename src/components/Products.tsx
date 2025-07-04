@@ -221,9 +221,6 @@ const Products = () => {
                   <span className="text-5xl font-bold text-[#EEEEEE]">₹7,999</span>
                   <span className="text-[#99CCD9]">/month</span>
                 </div>
-                <button className="w-full bg-[#4B8898] hover:bg-[#5BA8B8] text-[#1F1F1F] font-medium py-3 px-6 rounded-lg transition-colors duration-300 mb-8">
-                  Get Started
-                </button>
                 <ul className="space-y-4 text-left">
                   <li className="flex items-center text-[#EEEEEE]">
                     <svg className="h-5 w-5 text-[#4B8898] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -259,9 +256,6 @@ const Products = () => {
                   <span className="text-5xl font-bold text-[#EEEEEE]">₹24,999</span>
                   <span className="text-[#D1E7EC]">/month</span>
                 </div>
-                <button className="w-full bg-[#1F1F1F] hover:bg-[#333333] text-[#EEEEEE] font-medium py-3 px-6 rounded-lg transition-colors duration-300 mb-8">
-                  Get Started
-                </button>
                 <ul className="space-y-4 text-left">
                   <li className="flex items-center text-[#EEEEEE]">
                     <svg className="h-5 w-5 text-[#D1E7EC] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -305,9 +299,6 @@ const Products = () => {
                 <div className="mb-8">
                   <span className="text-5xl font-bold text-[#EEEEEE]">Custom</span>
                 </div>
-                <button className="w-full bg-[#4B8898] hover:bg-[#5BA8B8] text-[#1F1F1F] font-medium py-3 px-6 rounded-lg transition-colors duration-300 mb-8">
-                  Contact Sales
-                </button>
                 <ul className="space-y-4 text-left">
                   <li className="flex items-center text-[#EEEEEE]">
                     <svg className="h-5 w-5 text-[#4B8898] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">

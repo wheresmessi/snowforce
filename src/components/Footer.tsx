@@ -1,15 +1,15 @@
 import React from 'react';
-import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { SocialIcon } from 'react-social-icons';
 import '../styles/colors.css';
 
 const Footer: React.FC = () => {
   return (
     <footer
       style={{
-        background: 'var(--color-background-dark)', // Use color-background-dark
-        backdropFilter: 'blur(10px)', // Apply blur effect
+        background: 'var(--color-background-dark)',
+        backdropFilter: 'blur(10px)',
       }}
-      className="py-8" // Reduced height with smaller padding
+      className="py-8"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -47,39 +47,40 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex space-x-6">
-              <a
-                href="https://www.linkedin.com/company/snowforce-technologies/"
+            <div className="flex space-x-4">
+              <SocialIcon
+                url="https://www.linkedin.com/company/snowforce-technologies/"
+                bgColor="transparent"
+                fgColor="var(--color-text-muted)"
+                style={{ height: 32, width: 32 }}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors duration-200 hover:text-[var(--color-button-primary)]"
-                style={{ color: 'var(--color-text-muted)' }}
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="https://www.instagram.com/snowforce_technologies?igsh=MXM5eWY1YmFrdzhhaA=="
+              />
+              <SocialIcon
+                url="https://www.instagram.com/snowforce_technologies?igsh=MXM5eWY1YmFrdzhhaA=="
+                bgColor="transparent"
+                fgColor="var(--color-text-muted)"
+                style={{ height: 32, width: 32 }}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors duration-200 hover:text-[var(--color-button-primary)]"
-                style={{ color: 'var(--color-text-muted)' }}
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="transition-colors duration-200 hover:text-[var(--color-button-primary)]"
-                style={{ color: 'var(--color-text-muted)' }}
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="transition-colors duration-200 hover:text-[var(--color-button-primary)]"
-                style={{ color: 'var(--color-text-muted)' }}
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
+              />
+              <SocialIcon
+                url="https://www.facebook.com/"
+                bgColor="transparent"
+                fgColor="var(--color-text-muted)"
+                style={{ height: 32, width: 32 }}
+                target="_blank"
+                rel="noopener noreferrer"
+              />
+              <SocialIcon
+                url="https://twitter.com/"
+                network="x"
+                bgColor="transparent"
+                fgColor="var(--color-text-muted)"
+                style={{ height: 32, width: 32 }}
+                target="_blank"
+                rel="noopener noreferrer"
+              />
             </div>
           </div>
 

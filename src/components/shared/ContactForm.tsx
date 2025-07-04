@@ -119,7 +119,25 @@ const ContactForm: React.FC<ContactFormProps> = ({
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-200 disabled:opacity-50"
+              className="w-full text-white py-2 px-4 rounded-md transition-colors duration-200 disabled:opacity-50"
+              style={{
+              backgroundColor: '#EA762C',
+              ...(status !== 'sending' && { 
+                // Slightly darken on hover if not sending
+                transition: 'background-color 0.2s',
+                cursor: 'pointer'
+              })
+              }}
+              onMouseOver={e => {
+              if (status !== 'sending') {
+                (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#06697f';
+              }
+              }}
+              onMouseOut={e => {
+              if (status !== 'sending') {
+                (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#077B96';
+              }
+              }}
             >
               {status === 'sending' ? 'Sending...' : 'Send Message'}
             </button>

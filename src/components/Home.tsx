@@ -396,7 +396,7 @@ Reach out to us today — let’s start building your digital future together.
                 </p>
               </div>
                 
-            {/* address */}
+            {/* address 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex items-center space-x-4">
                   <svg className="w-8 h-8 text-[var(--color-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -431,7 +431,7 @@ Reach out to us today — let’s start building your digital future together.
                   </div>
                 </div>
               </div>
-
+*/}
              
             </div>
           </div>

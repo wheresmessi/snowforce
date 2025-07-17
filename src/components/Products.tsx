@@ -188,7 +188,7 @@ const Products = () => {
       <div className="flex items-center justify-center mt-8 mb-12">
   <div className="bg-[var(--color-primary)] p-1 rounded-lg flex relative">
     <div 
-      className="absolute transition-all duration-300 h-full top-0 rounded-md bg-[var(--color-secondary)]" 
+      className="absolute transition-all duration-300 h-full top-0 rounded-md bg-[var(--color-button-secondary)]" 
       style={{ 
         width: '50%',
         left: isMonthlySubscription ? '0%' : '50%'

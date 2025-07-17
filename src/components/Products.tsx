@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import Map from './shared/Map';
 import SolutionsSection from './shared/SolutionsSection';
 import ContactForm from './shared/ContactForm';
@@ -6,23 +6,8 @@ import '../styles/colors.css';
 import TextContainer from './shared/TextContainer';
 import { AttachMoney, Speed, AccountBalance, SupportAgent, TrendingUp } from '@mui/icons-material';
 
-interface OrbitItem {
-  id: number;
-  name: string;
-  icon: string;
-  orbit: number;
-  angle: number;
-}
 
 const Products = () => {
-  const features = [
-    'Proven track record of 98% on-time project delivery',
-    'Average 23% reduction in project costs for our clients',
-    '24/7 dedicated support from construction experts',
-    'Seamless integration with existing tools and workflows',
-    'Military-grade security for your project data',
-    'Scalable solutions for projects of any size',
-  ];
 
   const stats = [
     { label: 'Projects Completed', value: '2,500+' },
@@ -32,20 +17,9 @@ const Products = () => {
     { label: 'Active Users', value: '25,000+' },
   ];
 
-  const solutions: OrbitItem[] = [
-    { id: 1, name: 'Project Mgmt', icon: '📊', orbit: 1, angle: 0 },
-    { id: 2, name: 'Collaboration', icon: '🤝', orbit: 1, angle: 90 },
-    { id: 3, name: 'Analytics', icon: '📈', orbit: 1, angle: 180 },
-    { id: 4, name: 'Documents', icon: '📑', orbit: 1, angle: 270 },
-    { id: 5, name: 'Resource Track', icon: '📋', orbit: 2, angle: 0 },
-    { id: 6, name: 'Mobile Access', icon: '📱', orbit: 2, angle: 60 },
-    { id: 7, name: 'Custom Reports', icon: '📄', orbit: 2, angle: 120 },
-    { id: 8, name: 'Scheduling', icon: '📅', orbit: 2, angle: 180 },
-    { id: 9, name: 'Inventory', icon: '📦', orbit: 2, angle: 240 },
-    { id: 10, name: 'Safety Tools', icon: '🦺', orbit: 2, angle: 300 },
-  ];
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMonthlySubscription, setIsMonthlySubscription] = useState(true);
 
   return (
     <div style={{ backgroundColor: 'var(--color-background-dark)' }}>
@@ -201,154 +175,242 @@ const Products = () => {
             </section>
       {/* Pricing Section */}
       <section className="py-20" style={{ backgroundColor: 'var(--color-background-dark)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-normal mb-4" style={{ color: 'var(--color-secondary)' }}>
-              Simple, Transparent Pricing
-            </h2>
-            <p className="text-xl" style={{ color: 'var(--color-text-muted2)' }}>
-              Choose the perfect plan for your construction business needs
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Basic Plan */}
-            <div className="bg-[#2A2A2A] rounded-xl p-8 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#4B8898]/20">
-              <div className="text-center">
-                <h3 className="text-2xl font-normal text-[#EEEEEE] mb-2">Basic</h3>
-                <p className="text-[#99CCD9] mb-6">Perfect for small projects</p>
-                <div className="mb-8">
-                  <span className="text-5xl font-bold text-[#EEEEEE]">₹7,999</span>
-                  <span className="text-[#99CCD9]">/month</span>
-                </div>
-                <ul className="space-y-4 text-left">
-                  <li className="flex items-center text-[#EEEEEE]">
-                    <svg className="h-5 w-5 text-[#4B8898] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Up to 5 team members
-                  </li>
-                  <li className="flex items-center text-[#EEEEEE]">
-                    <svg className="h-5 w-5 text-[#4B8898] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    3 active projects
-                  </li>
-                  <li className="flex items-center text-[#EEEEEE]">
-                    <svg className="h-5 w-5 text-[#4B8898] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Basic support
-                  </li>
-                </ul>
-              </div>
-            </div>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl md:text-5xl font-normal mb-4" style={{ color: 'var(--color-secondary)' }}>
+      Simple, Transparent Pricing
+      </h2>
+      <p className="text-xl" style={{ color: 'var(--color-text-muted)' }}>
+      Choose the perfect plan for your construction business needs
+      </p>
+      
+      {/* Pricing Toggle */}
+      <div className="flex items-center justify-center mt-8 mb-12">
+  <div className="bg-[var(--color-primary)] p-1 rounded-lg flex relative">
+    <div 
+      className="absolute transition-all duration-300 h-full top-0 rounded-md bg-[var(--color-secondary)]" 
+      style={{ 
+        width: '50%',
+        left: isMonthlySubscription ? '0%' : '50%'
+      }}
+    />
+    <button
+      onClick={() => setIsMonthlySubscription(true)}
+      className={`px-6 py-2 rounded-md relative transition-colors duration-300 z-10 ${
+        isMonthlySubscription ? 'text-[var(--color-text-muted)]' : 'text-[var(--color-text-muted2)]'
+      }`}
+    >
+      Monthly Cloud
+    </button>
+    <button
+      onClick={() => setIsMonthlySubscription(false)}
+      className={`px-6 py-2 rounded-md relative transition-colors duration-300 z-10 ${
+        !isMonthlySubscription ? 'text-[var(--color-text-muted)]' : 'text-[var(--color-text-muted2)]'
+      }`}
+    >
+      One Time License
+    </button>
+  </div>
+</div>
 
-            {/* Popular Plan */}
-            <div className="bg-gradient-to-br from-[#4B8898] to-[#3A6A7A] rounded-xl p-8 shadow-xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 bg-[#99CCD9] text-[#1F1F1F] text-xs font-bold px-4 py-1 rounded-bl-lg">
-                POPULAR
-              </div>
-              <div className="text-center">
-                <h3 className="text-2xl font-normal text-[#EEEEEE] mb-2">Professional</h3>
-                <p className="text-[#D1E7EC] mb-6">Ideal for growing teams</p>
-                <div className="mb-8">
-                  <span className="text-5xl font-bold text-[#EEEEEE]">₹24,999</span>
-                  <span className="text-[#D1E7EC]">/month</span>
-                </div>
-                <ul className="space-y-4 text-left">
-                  <li className="flex items-center text-[#EEEEEE]">
-                    <svg className="h-5 w-5 text-[#D1E7EC] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Up to 20 team members
-                  </li>
-                  <li className="flex items-center text-[#EEEEEE]">
-                    <svg className="h-5 w-5 text-[#D1E7EC] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    15 active projects
-                  </li>
-                  <li className="flex items-center text-[#EEEEEE]">
-                    <svg className="h-5 w-5 text-[#D1E7EC] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Priority support
-                  </li>
-                  <li className="flex items-center text-[#EEEEEE]">
-                    <svg className="h-5 w-5 text-[#D1E7EC] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Advanced analytics
-                  </li>
-                  <li className="flex items-center text-[#EEEEEE]">
-                    <svg className="h-5 w-5 text-[#D1E7EC] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    API access
-                  </li>
-                </ul>
-              </div>
-            </div>
+    </div>
 
-            {/* Enterprise Plan */}
-            <div className="bg-[#2A2A2A] rounded-xl p-8 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#4B8898]/20">
-              <div className="text-center">
-                <h3 className="text-2xl font-normal text-[#EEEEEE] mb-2">Enterprise</h3>
-                <p className="text-[#99CCD9] mb-6">For large organizations</p>
-                <div className="mb-8">
-                  <span className="text-5xl font-bold text-[#EEEEEE]">Custom</span>
-                </div>
-                <ul className="space-y-4 text-left">
-                  <li className="flex items-center text-[#EEEEEE]">
-                    <svg className="h-5 w-5 text-[#4B8898] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Unlimited team members
-                  </li>
-                  <li className="flex items-center text-[#EEEEEE]">
-                    <svg className="h-5 w-5 text-[#4B8898] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Unlimited projects
-                  </li>
-                  <li className="flex items-center text-[#EEEEEE]">
-                    <svg className="h-5 w-5 text-[#4B8898] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    24/7 dedicated support
-                  </li>
-                  <li className="flex items-center text-[#EEEEEE]">
-                    <svg className="h-5 w-5 text-[#4B8898] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Custom integrations
-                  </li>
-                  <li className="flex items-center text-[#EEEEEE]">
-                    <svg className="h-5 w-5 text-[#4B8898] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    On-premise deployment
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+    {/* Add this grid container for the pricing plans */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {/* Basic Plan */}
+      <div className="rounded-xl p-8 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl" 
+           style={{ backgroundColor: 'var(--color-primary)' }}>
+        <div className="text-center">
           
-          <div className="mt-12 text-center">
-            <p className="text-[#99CCD9] mb-4">Need help choosing the right plan?</p>
-            <button 
-              onClick={() => setIsModalOpen(true)}
-              className="text-[#4B8898] hover:text-[#99CCD9] font-medium flex items-center justify-center mx-auto"
-            >
-              Contact our sales team
-              <svg className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+          <h3 className="text-2xl font-normal mb-2" style={{ color: 'var(--color-text-muted)' }}>Basic</h3>
+          <p className="mb-6" style={{ color: 'var(--color-primary-light)' }}>5 Modules</p>
+          <div className="mb-8">
+            {isMonthlySubscription ? (
+    <>
+      <span className="text-5xl font-bold" style={{ color: 'var(--color-text-muted)' }}>₹9,999</span>
+      <span style={{ color: 'var(--color-primary-light)' }}>/month</span>
+    </>
+  ) : (
+    <span className="text-xl" style={{ color: 'var(--color-primary-light)' }}>
+      Contact sales for one-time license pricing
+    </span>
+  )}
           </div>
+          <ul className="space-y-4 text-left">
+            {[
+              'Project Management',
+              'Vendor Management',
+              'Material Management',
+              'Work Progress',
+              'Financial Accounts'
+            ].map((item) => (
+              <li key={item} className="flex items-center" style={{ color: 'var(--color-text-muted)' }}>
+                <svg className="h-5 w-5 mr-2" style={{ color: 'var(--color-secondary)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                {item}
+              </li>
+            ))}
+            <li className="pt-4 border-t border-[var(--color-primary-light)]/20">
+              <p className="font-medium mb-2" style={{ color: 'var(--color-primary-light)' }}>Also includes:</p>
+              <ul className="space-y-2">
+                {[
+                  'Full Implementation',
+                  'End-to-End Customization',
+                  'Training 1 week',
+                  'Year-long customer support',
+                  'Post 12 Months: 15% AMC'
+                ].map((item) => (
+                  <li key={item} className="flex items-center" style={{ color: 'var(--color-text-muted)' }}>
+                    <svg className="h-5 w-5 mr-2" style={{ color: 'var(--color-secondary)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          </ul>
         </div>
-      </section>
+      </div>
+
+      {/* Standard Plan (Previously Professional) */}
+      <div className="rounded-xl p-8 shadow-xl transform transition-all duration-300 hover:scale-105 relative overflow-hidden"
+           style={{ background: `linear-gradient(to bottom right, var(--color-secondary), var(--color-secondary-dark))` }}>
+        <div className="absolute top-0 right-0 px-4 py-1 rounded-bl-lg"
+             style={{ backgroundColor: 'var(--color-primary-light)', color: 'var(--color-primary)' }}>
+          POPULAR
+        </div>
+        <div className="text-center">
+          
+          <h3 className="text-2xl font-normal mb-2" style={{ color: 'var(--color-text-muted)' }}>Standard</h3>
+          <p className="mb-6" style={{ color: 'var(--color-primary-light)' }}>9 Modules</p>
+          <div className="mb-8">
+            {isMonthlySubscription ? (
+    <>
+      <span className="text-5xl font-bold" style={{ color: 'var(--color-text-muted)' }}>₹14,999</span>
+      <span style={{ color: 'var(--color-primary-light)' }}>/month</span>
+    </>
+  ) : (
+    <span className="text-xl" style={{ color: 'var(--color-primary-light)' }}>
+      Contact sales for one-time license pricing
+    </span>
+  )}
+          </div>
+          <ul className="space-y-4 text-left">
+            {[
+              'Project Management',
+              'Vendor Management',
+              'Material Management',
+              'Work Progress',
+              'Financial Accounts',
+              'Site Monitor',
+              'Property Management',
+              'Asset Management',
+              'Management Information'
+            ].map((item) => (
+              <li key={item} className="flex items-center" style={{ color: 'var(--color-text-muted)' }}>
+                <svg className="h-5 w-5 mr-2" style={{ color: 'var(--color-secondary)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                {item}
+              </li>
+            ))}
+            <li className="pt-4 border-t border-[var(--color-primary-light)]/20">
+              <p className="font-medium mb-2" style={{ color: 'var(--color-primary-light)' }}>Also includes:</p>
+              <ul className="space-y-2">
+                {[
+                  'Full Implementation',
+                  'End-to-End Customization',
+                  '3-4 Weeks of Training',
+                  'Year-long customer support',
+                  'Post 12 Months: 15% AMC'
+                ].map((item) => (
+                  <li key={item} className="flex items-center" style={{ color: 'var(--color-text-muted)' }}>
+                    <svg className="h-5 w-5 mr-2" style={{ color: 'var(--color-secondary)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Enterprise Plan */}
+      <div className="rounded-xl p-8 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+           style={{ backgroundColor: 'var(--color-primary)' }}>
+        <div className="text-center">
+          <h3 className="text-2xl font-normal mb-2" style={{ color: 'var(--color-text-muted)' }}>Enterprise</h3>
+          <p className="mb-6" style={{ color: 'var(--color-primary-light)' }}>17 Modules</p>
+          <div className="mb-8">
+    {isMonthlySubscription ? (
+    <>
+      <span className="text-5xl font-bold" style={{ color: 'var(--color-text-muted)' }}>₹24,599</span>
+      <span style={{ color: 'var(--color-primary-light)' }}>/month</span>
+    </>
+  ) : (
+    <span className="text-xl" style={{ color: 'var(--color-primary-light)' }}>
+      Contact sales for one-time license pricing
+    </span>
+  )}
+          </div>
+          <ul className="space-y-4 text-left">
+            <li className="flex items-center" style={{ color: 'var(--color-text-muted)' }}>
+              <svg className="h-5 w-5 mr-2" style={{ color: 'var(--color-secondary)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              Complete Full Stack Functionality (17 modules)
+            </li>
+            <li className="flex items-center" style={{ color: 'var(--color-text-muted)' }}>
+              <svg className="h-5 w-5 mr-2" style={{ color: 'var(--color-secondary)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              Exclusive specialty modules like Land Bank & Inspection Modules
+            </li>
+            <li className="pt-4 border-t border-[var(--color-primary-light)]/20">
+              <p className="font-medium mb-2" style={{ color: 'var(--color-primary-light)' }}>Also includes:</p>
+              <ul className="space-y-2">
+                {[
+                  'Full Implementation',
+                  'End-to-End Customization',
+                  '1-2 weeks of training',
+                  'Year-long customer support',
+                  'Post 12 Months: 15% AMC'
+                ].map((item) => (
+                  <li key={item} className="flex items-center" style={{ color: 'var(--color-text-muted)' }}>
+                    <svg className="h-5 w-5 mr-2" style={{ color: 'var(--color-secondary)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div className="mt-12 text-center">
+      <p className="mb-4" style={{ color: 'var(--color-primary-light)' }}>Need help choosing the right plan?</p>
+      <button 
+        onClick={() => setIsModalOpen(true)}
+        className="font-medium flex items-center justify-center mx-auto transition-colors duration-300 hover:text-[var(--color-primary-light)]"
+        style={{ 
+          color: 'var(--color-secondary)'
+        }}
+      >
+        Contact our sales team
+        <svg className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
     </div>
   );
 };
